@@ -15,13 +15,12 @@ namespace APIsAndJSON
             var fetchRonQuotes = new RonVSKanyeAPI.RonSwansonQuotes(client);
             var fetchKanyeQuotes = new RonVSKanyeAPI.KanyeWestQuotes(client);
 
-            for (var item = 0; item < 11; item++)
+            for (var item = 0; item < 10; item++)
             {
                 if (item % 2 == 0)
                 {
                     var ronQuote = await fetchRonQuotes.GetRonSwansonQuoteAsync();
                     Console.WriteLine("Ron Swanson: " + ronQuote);
-                    Console.WriteLine();
                 }
                 else
                 {
@@ -31,7 +30,8 @@ namespace APIsAndJSON
                 }
             }
             #endregion
-
+            Console.WriteLine();
+            Console.WriteLine();
             var fetchWeather = new OpenWeatherMapAPI(client, apiKey);
             Console.WriteLine("Please enter the name of the city you wish to display the weather for:");
             var userInput = Console.ReadLine();

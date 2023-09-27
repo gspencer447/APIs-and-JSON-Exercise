@@ -11,7 +11,7 @@ namespace APIsAndJSON
     {
         public class RonSwansonQuotes
         {
-            private const string RonSwansonApiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+            private const string RonSwansonUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
             private readonly HttpClient _client;
 
@@ -22,7 +22,7 @@ namespace APIsAndJSON
 
             public async Task<string> GetRonSwansonQuoteAsync()
             {
-                var response = await _client.GetStringAsync(RonSwansonApiUrl);
+                var response = await _client.GetStringAsync(RonSwansonUrl);
                 var quoteArray = JArray.Parse(response);
                 return quoteArray[0].ToString();
             }
@@ -30,7 +30,7 @@ namespace APIsAndJSON
 
         public class KanyeWestQuotes
         {
-            private const string KanyeWestApiUrl = "https://api.kanye.rest/";
+            private const string KanyeWestUrl = "https://api.kanye.rest/";
 
             private readonly HttpClient _client;
 
@@ -41,7 +41,7 @@ namespace APIsAndJSON
 
             public async Task<string> GetKanyeWestQuoteAsync()
             {
-                var response = await _client.GetStringAsync(KanyeWestApiUrl);
+                var response = await _client.GetStringAsync(KanyeWestUrl);
                 var quoteObject = JObject.Parse(response);
                 return quoteObject["quote"].ToString();
             }
