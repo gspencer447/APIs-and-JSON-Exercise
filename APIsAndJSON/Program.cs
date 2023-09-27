@@ -30,6 +30,7 @@ namespace APIsAndJSON
                 }
             }
             #endregion
+
             Console.WriteLine();
             Console.WriteLine();
             var fetchWeather = new OpenWeatherMapAPI(client, apiKey);
